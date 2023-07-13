@@ -47,8 +47,8 @@
 			}
 		</script>
 		<!-- /Yandex.Metrika counter -->
-		<script type="module" crossorigin src="./assets/main-309ae6a0.js"></script>
-		<link rel="stylesheet" href="./assets/index-aaa572c6.css">
+		<script type="module" crossorigin src="./assets/main-17cda56b.js"></script>
+		<link rel="stylesheet" href="./assets/index-332dc14f.css">
 	</head>
 
 	<body>
@@ -96,86 +96,48 @@
 			</div>
 		</header>
 
-		<section class="banner relative pb-[56.25%]">
-			<div class="absolute z-[15] bg-black/40 inset-0"></div>
-			<div class="absolute inset-0 z-10">
-				<div class="swiper banner-slider-img h-full">
-
-					<div class="swiper-wrapper">
-						<div class="swiper-slide">
-							<img src="img/banners/gift-banner-1920.jpg" class="absolute h-full w-full object-cover object-center" alt="ALT" loading="lazy" />
-						</div>
-						<div class="swiper-slide">
-							<video
-								muted
-								poster="img/banner.jpg"
-								class="absolute h-full w-full"
-							>
-								<source src="video/banner.mp4" type="video/mp4" />
-							</video>
-						</div>
-					</div>
-
+		<section class="relative pb-[56.25%]">
+			<div
+				class="flex flex-col items-center justify-center gap-5 sm:gap-10 px-2 top-3 sm:top-[25%] absolute w-full z-20"
+			>
+				<div
+					class="text-lg sm:text-3xl md:text-4xl lg:text-5xl text-white text-center"
+				>
+					<h1 class="uppercase font-bold">
+						Новые автомобили по&nbsp;цене заводов изготовителей!
+					</h1>
+					<span class="block text-xs sm:text-xl md:text-2xl mt-[2%]"
+						>Уже доступны для бронирования в&nbsp;дилерском центре Альфа
+						в&nbsp;Самаре!</span
+					>
 				</div>
+				<a
+					class="popup-link btn white btn-o text-xs sm:text-base !py-1 sm:!py-3"
+					href="#common-modal"
+					data-title="Узнать подробнее"
+					data-form_name="Узнать подробнее. Баннер"
+				>
+					Узнать подробнее
+				</a>
 			</div>
-
-			<div class="absolute inset-0 z-20">
-				<div class="container h-full">
-					<div class="swiper banner-slider-text text-white h-full">
-
-						<div class="swiper-wrapper">
-							<div class="swiper-slide !flex flex-col justify-center" data-swiper-autoplay="3000">
-								<h2 class="text-lg sm:text-3xl md:text-4xl lg:text-5xl uppercase font-bold" data-swiper-parallax="-20%">Подарки первым 500 клиентам!</h2>
-								<p data-swiper-parallax="-40%" class="text-xs sm:text-xl md:text-2xl mt-5 mb-10">Подробности в официальных дилерских центрах Jetour в России</p>
-								<div data-swiper-parallax="-55%">
-									<a
-										class="popup-link btn white btn-o text-xs sm:text-base !py-1 sm:!py-3"
-										href="#common-modal"
-										data-title="Узнать подробнее"
-										data-form_name="Узнать подробнее. Новые автомобили по цене заводов изготовителей. Баннер"
-									>
-										Узнать подробнее
-									</a>
-								</div>
-							</div>
-							<div class="swiper-slide !inline-flex flex-col justify-center">
-								<h2 class="text-lg sm:text-3xl md:text-4xl lg:text-5xl uppercase font-bold" data-swiper-parallax="-20%">Новые автомобили по&nbsp;цене заводов изготовителей!</h2>
-								<p data-swiper-parallax="-40%" class="text-xs sm:text-xl md:text-2xl mt-5 mb-10">Уже доступны для бронирования в&nbsp;дилерском центре Альфа в&nbsp;Самаре!</p>
-								<div data-swiper-parallax="-55%">
-									<a
-										class="popup-link btn white btn-o text-xs sm:text-base !py-1 sm:!py-3"
-										href="#common-modal"
-										data-title="Узнать подробнее"
-										data-form_name="Узнать подробнее. Новые автомобили по цене заводов изготовителей. Баннер"
-									>
-										Узнать подробнее
-									</a>
-								</div>
-							</div>
-						</div>
-
-						<div class="swiper-pagination banner-pagination"></div>
-						<div class="autoplay-progress">
-							<svg viewBox="0 0 48 48">
-								<circle cx="24" cy="24" r="20"></circle>
-							</svg>
-							<span></span>
-						</div>
-	
-					</div>
-				</div>
-				<!-- If we need navigation buttons -->
-				<div class="swiper-button-prev banner-button-prev !hidden md:!flex"></div>
-				<div class="swiper-button-next banner-button-next !hidden md:!flex"></div>
-			</div>
-
+			<div class="absolute h-full w-full bg-black/40 z-10"></div>
+			<video
+				autoplay
+				muted
+				loop
+				poster="img/banner.jpg"
+				class="absolute h-full w-full"
+			>
+				<source src="video/banner.mp4" type="video/mp4" />
+			</video>
 		</section>
 
 		<!-- dashing -->
 
 		<section class="relative pb-20 xl:pb-32 z-[1] model" data-dir="dashing">
 			<img
-				src="img/dashing/bg.jpg"
+				data-src="img/dashing/bg.jpg"
+				loading="lazy"
 				class="absolute w-full h-[420px] object-cover z-[-1]"
 			/>
 			<div
@@ -390,7 +352,8 @@
 
 		<section class="relative pb-20 z-[1] model bg-gray-100" data-dir="x90Plus">
 			<img
-				src="img/x90Plus/bg.jpg"
+				data-src="img/x90Plus/bg.jpg"
+				loading="lazy"
 				class="absolute w-full h-[420px] object-cover z-[-1]"
 			/>
 			<div
@@ -1016,18 +979,18 @@
 		
 
 		<script>
-			// if ("loading" in HTMLImageElement.prototype) {
-			// 	const images = document.querySelectorAll('img[loading="lazy"]');
-			// 	images.forEach((img) => {
-			// 		img.src = img.dataset.src;
-			// 	});
-			// } else {
-			// 	// Dynamically import the LazySizes library
-			// 	const script = document.createElement("script");
-			// 	script.src =
-			// 		"https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js";
-			// 	document.body.appendChild(script);
-			// }
+			if ("loading" in HTMLImageElement.prototype) {
+				const images = document.querySelectorAll('img[loading="lazy"]');
+				images.forEach((img) => {
+					img.src = img.dataset.src;
+				});
+			} else {
+				// Dynamically import the LazySizes library
+				const script = document.createElement("script");
+				script.src =
+					"https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js";
+				document.body.appendChild(script);
+			}
 		</script>
 	</body>
 </html>
