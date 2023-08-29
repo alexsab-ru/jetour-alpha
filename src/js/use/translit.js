@@ -37,6 +37,8 @@ export function useTranslit(word) {
       silver: "Серебристый",
       brown: "Коричневый",
       red: "Красный",
+      grey: "Серый",
+      azure: "Лазурный",
       // 
       bodytype: "Кузов",
       engine: "Объем двигателя",
