@@ -15,17 +15,17 @@ export default {
 		const images = [1, 5, 10];
 
 		const carInfo = [
-			{label: 'Комплектация:', key: 'compl', icon: '/img/rebranding/equipment.svg'},
-			{label: 'VIN:', key: 'vin_hidden', icon: '/img/rebranding/vin.svg'},
-			{label: 'Кузов:', key: 'bodytype', icon: '/img/rebranding/car.svg'},
-			{label: 'Год:', key: 'year', icon: '/img/rebranding/data.svg'},
-			{label: 'Пробег:', key: 'mileage', icon: '/img/rebranding/engine.svg'},
-			{label: 'Цвет:', key: 'color_rus', icon: '/img/rebranding/color.svg'},
-			{label: 'Привод:', key: 'drive', icon: '/img/rebranding/privod.svg'},
-			{label: 'КПП:', key: 'transmission', icon: '/img/rebranding/gear.svg'},
-			{label: 'Двигатель:', key: 'engine', icon: '/img/rebranding/all-engine.svg'},
-			{label: 'Скидка за кредит', key: 'credit', icon: '/img/rebranding/money.svg'},
-			{label: 'Скидка по Трейд-ин от', key: 'trade_in', icon: '/img/rebranding/trade-in.svg'},
+			{label: 'Комплектация:', key: 'complectation', icon: '/img/icons/equipment.svg'},
+			{label: 'VIN:', key: 'vin_hidden', icon: '/img/icons/vin.svg'},
+			{label: 'Кузов:', key: 'bodyConfiguration', icon: '/img/icons/car.svg'},
+			{label: 'Год:', key: 'year', icon: '/img/icons/data.svg'},
+			{label: 'Пробег:', key: 'mileage', icon: '/img/icons/engine.svg'},
+			{label: 'Цвет:', key: 'bodyColor', icon: '/img/icons/color.svg'},
+			{label: 'Привод:', key: 'driveType', icon: '/img/icons/privod.svg'},
+			{label: 'КПП:', key: 'gearboxType', icon: '/img/icons/gear.svg'},
+			{label: 'Двигатель:', key: 'modification', icon: '/img/icons/all-engine.svg'},
+			{label: 'Скидка за кредит', key: 'credit', icon: '/img/icons/money.svg'},
+			{label: 'Скидка по Трейд-ин от', key: 'tradeinDiscount', icon: '/img/icons/trade-in.svg'},
 		];
 
 		const modalShow = (id) => {
@@ -85,19 +85,19 @@ export default {
 		data-aos="fade-up"
 		data-aos-offset="100"
 	>
-		<a :id="car.vin_hidden" class="anchor"></a>
+		<a :id="car.vin" class="anchor"></a>
 		<a
 			href="#cheaper"
-			:id="car.vin_hidden+'-car'"
+			:id="car.vin+'-car'"
 			class="car-link modal-link-parent"
 			@click.prevent="modalShow('#cheaper')"
 		>
-			<h2 :class="{'!mb-10': car.benefit1, '!mb-0': !car.benefit1}">{{ car.caption }}</h2>
+			<h2 class="!mb-6">{{ car.model }}</h2>
 		</a>
 
-		<div class="top_number d-flex" v-if="car.benefit1">
+		<div class="top_number d-flex" v-if="car.price && car.priceWithDiscount">
 			<div class="top_number-color val-benefit">
-				Выгода до&nbsp;{{ useLocaleString(Number(car.benefit1)) }}
+				Выгода&nbsp;{{ useLocaleString(Number(car.price - car.priceWithDiscount)) }}
 			</div>
 		</div>
 		<div class="preview-slider mb-4">
@@ -157,10 +157,12 @@ export default {
 						? Number(car.credit.replace(/[^0-9]/g,''))
 						: info.key === 'mileage'
 						? car.mileage+'&nbsp;км.'
-						: info.key === 'color_rus'
-						? useTranslit(car.color_rus)
-						: info.key === 'transmission'
-						? useTranslit(car.transmission)
+						: info.key === 'bodyColor'
+						? useTranslit(car.bodyColor)
+						: info.key === 'driveType'
+						? useTranslit(car.driveType)
+						: info.key === 'gearboxType'
+						? useTranslit(car.gearboxType)
 						: car[info.key]
 					"
 				/>
@@ -170,9 +172,9 @@ export default {
 
 		<div class="bottom_number">
 			<div class="relevant-price val-price">
-				{{ useLocaleString(Number(car.price1)) }}
+				{{ useLocaleString(Number(car.priceWithDiscount)) }}
 			</div>
-			<s class="old-price" v-if="car.price0">{{ useLocaleString(Number(car.price0)) }}</s>
+			<s class="old-price" v-if="car.price">{{ useLocaleString(Number(car.price)) }}</s>
 		</div>
 		<div class="btn-wrap">
 			<a

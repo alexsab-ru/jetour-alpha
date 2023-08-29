@@ -21,7 +21,7 @@
 	<a
 		:href="href"
 		class="glightbox preview-link"
-		:data-gallery="car.kia_id + '-' + car.vin_hidden"
+		:data-gallery="car.id + '-' + car.vin"
 	>
 		<div 
 			v-if="image"

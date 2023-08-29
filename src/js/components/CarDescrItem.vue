@@ -7,8 +7,9 @@ export default {
 	setup(props){
 
 		const out = computed(() => {
+			console.log(props.info);
 			const value = props.value;
-			if(typeof value === 'number'){
+			if(typeof value === 'number' && props.info.key != 'year'){
 				return useLocaleString(value);
 			}
 			return value;

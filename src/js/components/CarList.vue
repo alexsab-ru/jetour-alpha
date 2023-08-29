@@ -1,6 +1,11 @@
 <script>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import CarItem from "./CarItem.vue";
+
+import GLightbox from "glightbox";
+import "glightbox/dist/css/glightbox.min.css";
+const lightbox = GLightbox({});
+
 export default {
     components: {
         CarItem 
@@ -14,6 +19,12 @@ export default {
             .then((data) => {
                 cars.value = data.vehicles.vehicle;
             });
+
+        onMounted(() => {    
+            setTimeout(() => {
+                lightbox.reload();
+            }, 1000)        
+        })
 
         return {
             cars
