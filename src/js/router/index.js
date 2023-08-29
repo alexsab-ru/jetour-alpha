@@ -1,8 +1,14 @@
 import {createRouter, createWebHistory} from 'vue-router';
+const Home = { template: '<div></div>' }
 
 const routes = [
     { 
-        path: '/cars/', 
+        path: '/',
+        component: Home
+    },
+    { 
+        path: '/cars', 
+        name: 'cars',
         component: () => import('../components/CarList.vue')
     },
 ]
