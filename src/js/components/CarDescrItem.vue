@@ -7,7 +7,6 @@ export default {
 	setup(props){
 
 		const out = computed(() => {
-			console.log(props.info);
 			const value = props.value;
 			if(typeof value === 'number' && props.info.key != 'year'){
 				return useLocaleString(value);
@@ -28,6 +27,6 @@ export default {
 			class="icon-limit"
 			:src="info.icon"
 		/>
-		<div class="descr-text" v-html="info.label+' '+out"></div>
+		<div class="descr-text">{{ info.label}} <span class="font-normal">{{ out }} </span></div>
 	</div>
 </template>

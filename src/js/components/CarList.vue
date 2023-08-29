@@ -12,7 +12,7 @@ export default {
     },
     setup() {
         const cars = ref(null)
-        fetch('cars.json')
+        fetch('/cars.json')
             .then((response) => {
                 return response.json();
             })
@@ -36,7 +36,7 @@ export default {
 <template>
     <div class="container">
         <h2 class="text-center text-xl sm:text-4xl font-medium mb-14">Автомобили в наличии</h2>
-        <div class="flex flex-wrap justify-between">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             <car-item v-for="car in cars" :key="car.vin" :car="car" class="w-auto" />
         </div>
     </div>

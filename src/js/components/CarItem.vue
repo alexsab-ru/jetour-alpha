@@ -25,7 +25,7 @@ export default {
 			{label: 'КПП:', key: 'gearboxType', icon: '/img/icons/gear.svg'},
 			{label: 'Двигатель:', key: 'modification', icon: '/img/icons/all-engine.svg'},
 			{label: 'Скидка за кредит', key: 'credit', icon: '/img/icons/money.svg'},
-			{label: 'Скидка по Трейд-ин от', key: 'tradeinDiscount', icon: '/img/icons/trade-in.svg'},
+			{label: 'Скидка по Трейд-ин', key: 'tradeinDiscount', icon: '/img/icons/trade-in.svg'},
 		];
 
 		const modalShow = (id) => {
@@ -179,13 +179,13 @@ export default {
 		<div class="btn-wrap">
 			<a
 				href="#cheaper"
-				class="btn btn-white modal-link"
+				class="btn btn-white popup-link"
 				@click.prevent="modalShow('#cheaper')"
 				><div>Хочу&nbsp;скидку</div></a
 			>
 			<a
 				href="#credit"
-				class="btn modal-link credit-link"
+				class="btn popup-link credit-link"
 				@click.prevent="modalShow('#credit')"
 				><div>Расчитать&nbsp;кредит</div></a
 			>
