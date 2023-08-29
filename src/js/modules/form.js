@@ -1,6 +1,12 @@
 const $$ = (el) => {
 	return document.querySelectorAll(el);
 };
+function dl(event, t = {}) {
+	void 0 !== window.dataLayer && window.dataLayer.push({
+		event: event,
+		...t
+	})
+}
 // PHONE MASK
 function maskphone(e) {
 	let num = this.value
@@ -138,6 +144,8 @@ $$("form").forEach((form) => {
 		for (const pair of formData) {
 			params.append(pair[0], pair[1]);
 		}
+		console.log(formData.form);
+		return;
 		// await fetch('https://alexsab.ru/lead/test/', {
 		await fetch("https://alexsab.ru/lead/jetour/alpha/", {
 			method: "POST",
@@ -159,6 +167,11 @@ $$("form").forEach((form) => {
 				} else if (data.answer == "error") {
 					showMessageModal(messageModal, errorIcon, errorText + "<br>" + data.error);
 				} else {
+					dl("form_success", {
+						// formName: formData.get('form'),
+						formName: form.id,
+						sourceName: 'page'
+					})
 					showMessageModal(messageModal, successIcon, successText);
 				}
 				form.reset();
