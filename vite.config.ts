@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import path from "path";
+import vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
   base: '',
@@ -11,5 +12,6 @@ export default defineConfig({
         error: path.resolve(__dirname, '404.html')
       }
     }
-  }
+  },
+  plugins: [vue()],
 })

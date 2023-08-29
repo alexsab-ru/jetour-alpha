@@ -1,0 +1,386 @@
+.cars
+	&-head
+		padding: 50px 0
+		// margin-top: -20px
+		background-size: cover
+		background-position: center
+		position: relative
+		background-color: white
+		z-index: 1
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			left: 0
+			top: 0
+			width: 100%
+			height: 100%
+			background-color: rgba(yellow, .8)
+			z-index: -1
+		h2
+			max-width: 680px
+			width: 100%
+			font-size: 36px
+			color: #000
+			margin: 0 auto
+			text-align: center
+			line-height: 1.35
+	&-links
+		display: flex
+		justify-content: center
+		flex-wrap: wrap
+		list-style-type: none
+		padding: 0
+		// +media-breakpoint-down(xs)
+		// 	padding: 0 15px
+		// 	justify-content: space-between
+		li
+			flex: auto
+			text-align: center
+			// +media-breakpoint-down(xs)
+			// 	width: calc(50% - 7.5px)
+		a
+			background-color: white
+			//padding: 0 30px
+			box-shadow: 0 15px 35px -5px rgba(#000,.25)
+			border: none
+			// color: $midnight
+			//font-size: 16px
+			display: block
+			margin: 25px 15px 0
+			//transition: transform .3s cubic-bezier(.25,.1,.25,1),box-shadow .3s cubic-bezier(.25,.1,.25,1)
+			// +media-breakpoint-down(xs)
+			// 	margin: 15px 0 0
+			// 	padding: 0 5px
+			span:before
+				top: 100%
+			&:hover
+				// transform: translateY(-.125em)
+				border: none
+				box-shadow: 0 5px 30px -5px rgba(#000,.25)
+	&-list
+		padding: 80px 0 30px
+		display: flex
+		flex-wrap: wrap
+		// +media-breakpoint-down(xs)
+		// 	padding: 30px 0
+		&.shop
+			.car .preview-img.no-height img,
+			.car .photo img
+				transform: translate(-56%, -50%) scale(1.5)
+				&.carnival
+					display: inline
+				&.ceed
+					display: inline
+				&.ceed_sw
+					display: inline
+				&.cerato
+					display: inline
+					transform: translate(-56%, -60%) scale(1.5)
+				&.k5
+					display: inline
+					transform: translate(-56%, -46%) scale(1.5)
+				&.k900
+					display: inline
+				&.mohave
+					display: inline
+					transform: translate(-56%, -55%) scale(1.43)
+				&.picanto
+					display: inline
+					transform: translate(-56%, -53%) scale(1.5)
+				&.proceed
+					display: inline
+				&.rio
+					display: inline
+					transform: translate(-55%, -50%) scale(1.47)
+				&.rio-x
+					display: inline
+					transform: translate(-55%, -47%) scale(1.47)
+				&.seltos
+					display: inline
+					transform: translate(-55%, -54%) scale(1.4)
+				&.sorento
+					display: inline
+					transform: translate(-54%, -46%) scale(1.48)
+				&.soul
+					display: inline
+					transform: translate(-55%, -50%) scale(1.2)
+				&.sportage_ql
+					display: inline
+					transform: translate(-54%, -50%) scale(1.5)
+				&.stinger
+					display: inline
+					transform: translate(-56%, -52%) scale(1.6)
+				&.sportage
+					display: inline
+					transform: translate(-54%, -40%) scale(1.5)
+				&.k9
+					display: inline
+					transform: translate(-53%, -45%) scale(1.4)
+				&.bongo
+					display: inline
+					transform: translate(-50%, -45%) scale(1.1)
+				&.j7
+					display: inline
+					transform: translate(-50%, -50%) scale(1)
+				&.js6
+					display: inline
+					transform: translate(-50%, -50%) scale(1)
+
+.car
+	width: 30%
+	margin-bottom: 90px
+	padding-bottom: 100px
+	position: relative
+	margin-left: 1.65%
+	margin-right: 1.65%
+	a.anchor
+		display: block
+		position: relative
+		visibility: hidden
+		top: -93px
+		@media (min-width: 1600px)
+			top: -98px
+		// +media-breakpoint-down(lg)
+		// 	top: -83px
+		@media (max-width: 916px)
+			top: -122px
+		// +media-breakpoint-down(sm)
+		// 	top: 1px
+	.btn-wrap
+		display: flex
+		align-items: center
+		justify-content: space-between
+		position: absolute
+		width: 100%
+		left: 0
+		bottom: 0
+		.btn
+			text-transform: none
+			padding: 0 20px
+	&-link
+		color: #000
+		font-weight: 300
+		&:hover
+			color: #000
+	h2
+		font-weight: 700
+		margin-bottom: 55px
+		font-size: 35px
+		white-space: nowrap
+	h2.red
+		background-color: red
+		font-size: 20px
+		text-transform: uppercase
+		border-radius: initial
+		color: white
+		height: 50px
+		display: inline-block
+		line-height: 50px
+		text-align: center
+		padding: 0 10px
+		position: relative
+		&:after
+			position: absolute
+			z-index: -1
+			content: ""
+			right: -10%
+			top: 0
+			height: 50px
+			width: 100%
+			background-color: inherit
+			transform: skewX(-10deg)
+		&:before
+			position: absolute
+			z-index: -1
+			content: ""
+			left: -10%
+			top: 0
+			height: 50px
+			width: 100%
+			background-color: inherit
+			transform: skewX(-10deg)
+
+	.photo
+		position: relative
+		display: block
+		height: 200px
+		&:hover
+			img
+				&:first-child
+					opacity: 0
+				&:last-child
+					opacity: 1
+		img
+			transition: all .3s
+			opacity: 1
+			position: absolute
+			top: 50%
+			left: 50%
+			height: auto
+			transform: translate(-50%, -50%)
+			&:last-child
+				opacity: 0
+	.descr
+		font-size: 16px
+		line-height: 1.2
+		display: block
+		margin-bottom: 25px
+		font-weight: 500
+		&-item
+			display: flex
+			align-items: center
+			margin-bottom: 10px
+			&.gosprogram
+				font-weight: 700
+				min-height: 40px
+			img
+				width: 22px
+				height: 100%
+				margin-right: 12px
+		&-text
+			flex: auto
+	.bottom_number
+		font-size: 16px
+		font-weight: bold
+		display: flex
+		align-items: center
+		position: absolute
+		left: 0
+		bottom: 65px
+		img
+			width: 35px
+			height: auto
+			margin-right: 15px
+		s
+			color: gray
+			margin-left: 13px
+	&.active
+		h2.mypulse
+			background-color: yellow
+			animation-name: mypulse
+			animation-iteration-count: infinite
+			animation-delay: .2s
+		.top_number
+			color: white
+		.photo img
+			opacity: 0
+		.photo img:last-child
+			opacity: 1
+.top_number
+	display: block
+	font-weight: bold
+	color: white
+	margin-bottom: 20px
+	border-radius: 2px
+	position: absolute
+	top: 60px
+	// left: -12px
+	&-color
+		padding: 0 4px
+		background-color: green
+
+@-webkit-keyframes mypulse
+	from
+		transform: scale3d(1, 1, 1)
+	50%
+		transform: scale3d(1.05, 1.05, 1.05)
+	to
+		transform: scale3d(1, 1, 1)
+
+button
+	border: none
+	background: none
+	cursor: pointer
+	color: inherit
+
+.button-icon
+	vertical-align: middle
+
+.info-icon-gray:hover
+	color: #000
+
+.color-disabled-gray
+	color: red
+
+@media (max-width: 322px), (min-width: 576px) and (max-width: 665px), (min-width: 768px) and (max-width: 1200px)
+	.car a#Новый-Sportage-car:nth-child(2)
+		position: relative
+		top: -30px
+		line-height: initial
+		h2
+			margin-bottom: 30px
+
+.preview-slider
+	position: relative
+
+.preview-list
+	display: flex
+	overflow: hidden
+	&:not(:hover)
+		.preview-link:first-child
+			.preview-img
+				opacity: 1
+	&:hover
+		.preview-link::before
+			top: 97%
+
+.preview-link
+	flex-basis: 100%
+	&::before
+		content: ''
+		position: relative
+		width: 96%
+		height: 3px
+		top: 103%
+		left: 2%
+		background-color: #000
+		display: block
+		transition: all .3s
+	&:hover
+		.preview-img
+			opacity: 1
+		&::before
+			background-color: red
+
+.preview-img
+	position: absolute
+	top: 0
+	left: 0
+	height: 100%
+	width: 100%
+	opacity: 0
+	transition: opacity .3s ease-out
+	z-index: -1
+	overflow: hidden
+	img
+		position: relative
+		height: 100%
+		max-width: 100%
+		width: 100%
+		left: 50%
+		top: 50%
+		object-fit: cover
+		object-position: center
+		transform: translate(-50%, -50%) scale(1)
+	.preview-total
+		position: absolute
+		top: 0
+		left: 0
+		text-align: center
+		width: 100%
+		height: 100%
+		display: flex
+		align-items: center
+		justify-content: center
+		background-color: rgba(black, .6)
+		color: white
+		font-size: 16px
+	&.no-height
+		img
+			width: 100%
+			height: auto
+
+
+
+
