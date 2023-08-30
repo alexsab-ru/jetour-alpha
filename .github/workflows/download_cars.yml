@@ -1,0 +1,56 @@
+name: Download and convert xml feed
+
+on:
+  schedule:
+    - cron: '0 */2 * * *'  # Запускается каждый час
+  push:
+    paths:
+      - '.github/workflows/download_cars.yml'
+      - '.github/download_cars.py'
+
+jobs:
+  download_cars:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Install xml2json tool
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y python3-pip
+        pip3 install xmltodict
+        pip3 install requests
+
+    - name: Convert XML to JSON
+      run: python3 .github/download_cars.py > public/cars_temp.json
+
+    # Проверяем, создан ли временный файл и не пустой ли он
+    - name: Check if cars_temp.json is valid
+      id: check_temp
+      run: |
+        if [[ -f public/cars_temp.json && -s public/cars_temp.json ]]; then
+          mv public/cars_temp.json public/cars.json
+        else
+          echo "Temporary file is not valid, skipping."
+          exit 1
+        fi
+
+    - name: Check for changes
+      id: check_changes
+      run: |
+        git diff --exit-code || echo "changes=true" >> $GITHUB_ENV
+      continue-on-error: true
+
+    - name: Commit changes
+      if: env.changes == 'true'
+      run: |
+        git config --local user.email "support+actions@github.com"
+        git config --local user.name "github-actions-bot"
+        git add public/cars.json
+        git commit -m "Update cars.json due to detected changes"
+        git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+        git push origin main
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
