@@ -7,9 +7,12 @@ export default {
 	setup(props){
 
 		const out = computed(() => {
-			const value = props.value;
+			let value = props.value;
 			if(typeof value === 'number' && props.info.key != 'year'){
 				return useLocaleString(value);
+			}
+			if(props.info.key === 'vin'){
+				return value.slice(0, 4)+'-'+value.slice(-4)
 			}
 			return value;
 		})

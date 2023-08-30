@@ -16,7 +16,7 @@ export default {
 
 		const carInfo = [
 			{label: 'Комплектация:', key: 'complectation', icon: '/img/icons/equipment.svg'},
-			{label: 'VIN:', key: 'vin_hidden', icon: '/img/icons/vin.svg'},
+			{label: 'VIN:', key: 'vin', icon: '/img/icons/vin.svg'},
 			{label: 'Кузов:', key: 'bodyConfiguration', icon: '/img/icons/car.svg'},
 			{label: 'Год:', key: 'year', icon: '/img/icons/data.svg'},
 			{label: 'Пробег:', key: 'mileage', icon: '/img/icons/engine.svg'},
@@ -28,50 +28,9 @@ export default {
 			{label: 'Скидка по Трейд-ин', key: 'tradeinDiscount', icon: '/img/icons/trade-in.svg'},
 		];
 
-		const modalShow = (id) => {
-			nextTick(() => {
-				const car = props.car
-				if (id === "#credit") {
-					const price = car.price1
-					window.$(".contribution").find(".range").attr("max", price);
-					window.$(".contribution").find(".range__interval-txt_max").text(Number(price).toLocaleString('ru-RU'));
-					try {
-						window.input_range.init(".kia-form", ".contribution", 0, price, 10000);
-					} catch (err) {
-						console.error(err);
-					}
-					try {
-						window.input_range.init(".kia-form", ".term", 0, 72, 1);
-					} catch (err) {
-						console.error(err);
-					}
-				}
-				const form = window.$(id+'-form');
-				form.find('[name=model]').val(car.model_full ?? '');
-				form.find('[name=vin]').val(car.vin ?? '');
-				form.find('[name=price]').val(car.price1 ?? '');
-				form.find('[name=year]').val(car.year ?? '');
-				form.find('[name=bodytype]').val(car.bodytype ?? '');
-				form.find('[name=color_rus]').val(car.color_rus ?? '');
-				form.find('[name=drive]').val(car.drive ?? '');
-				form.find('[name=engine]').val(car.engine ?? '');
-				form.find('[name=quantity]').val(car.quantity ?? '');
-				form.find('[name=credit]').val(car.credit ?? '');
-				form.find('[name=trade_in]').val(car.trade_in ?? '');
-				form.find('[name=benefit]').val(car.benefit1 ?? '');
-				form.find('[name=complectation]').val(car.compl ?? '');
-				form.find('input.'+car.dealer+'[name="dealer"]').prop( "checked", true );
-				form.find('.dealer-choice').addClass("!hidden");
-				form.find('.dealer-choice+div').addClass("!hidden");
-				window.$(id+'-form').find('.required-field').removeClass('has-error');
-				window.$.magnificPopup.open({ items: { src: id } } ?? '');
-			});
-		};
-
 		return {
 			useLocaleString,
 			useTranslit,
-			modalShow,
 			images,
 			carInfo
 		};
@@ -87,11 +46,11 @@ export default {
 	>
 		<a :id="car.vin" class="anchor"></a>
 		<a
-			href="#cheaper"
+			href="#common-modal" 
+			class="popup-link car-link modal-link-parent" 
 			:id="car.vin+'-car'"
-			class="car-link modal-link-parent"
-			@click.prevent="modalShow('#cheaper')"
-		>
+			data-title="Хочу скидку" 
+			:data-form_name="`Хочу скидку. ${car.model} VIN(${car.vin})`">
 			<h2 class="!mb-6">{{ car.model }}</h2>
 		</a>
 
