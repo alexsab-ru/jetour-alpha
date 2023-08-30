@@ -65,9 +65,9 @@
 
 			const sorting = (val) => {
 				loading.value = true;
-				sort.value = val;
 				open.value = false;
 				setTimeout(() => {
+                    sort.value = val;
 					loading.value = false;
 				}, 500);
 			};
@@ -103,7 +103,7 @@
 		<hr />
 
 		<div class="flex items-center gap-4 my-5">
-            
+
 			<span>Сортировать по:</span>
 
 			<div class="relative min-w-[250px] w-auto">
