@@ -5,7 +5,7 @@ export default {
         CarList
     },
     setup() {
-        
+
     },
 }
 </script>

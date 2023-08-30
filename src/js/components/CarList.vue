@@ -10,7 +10,7 @@ import { modal, closeModal } from'../modules/modals';
 
 export default {
     components: {
-        CarItem 
+        CarItem
     },
     setup() {
         const cars = ref(null)
@@ -20,14 +20,23 @@ export default {
             })
             .then((data) => {
                 cars.value = data.vehicles.vehicle;
+                const urlParams = new URLSearchParams(location.search);
+                switch(urlParams.get('model')) {
+                    case 'dashing':
+                        cars.value.sort((a,b)=>a.model.localeCompare(b.model));
+                        break;
+                    case 'x90plus':
+                        break;
+                    default:
+                }
             });
 
-        onMounted(() => {    
+        onMounted(() => {
             setTimeout(() => {
                 lightbox.reload();
                 modal();
                 closeModal();
-            }, 1000) 
+            }, 1000)
         })
 
         return {

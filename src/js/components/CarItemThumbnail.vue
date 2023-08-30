@@ -23,10 +23,10 @@
 		class="glightbox preview-link"
 		:data-gallery="car.id + '-' + car.vin"
 	>
-		<div 
+		<div
 			v-if="image"
 			:class="{'no-height': noHeight}"
-			class="preview-img" 
+			class="preview-img"
 		>
 			<img
 				:class="car.kia_id"

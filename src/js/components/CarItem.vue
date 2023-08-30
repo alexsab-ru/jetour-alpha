@@ -46,10 +46,10 @@ export default {
 	>
 		<a :id="car.vin" class="anchor"></a>
 		<a
-			href="#common-modal" 
-			class="popup-link car-link modal-link-parent" 
+			href="#common-modal"
+			class="popup-link car-link modal-link-parent"
 			:id="car.vin+'-car'"
-			data-title="Хочу скидку" 
+			data-title="Хочу скидку"
 			:data-form_name="`Хочу скидку. ${car.model} VIN(${car.vin})`">
 			<h2 class="!mb-6">{{ car.model }}</h2>
 		</a>
@@ -65,7 +65,7 @@ export default {
 				<template v-if="car.photos.photo.length">
 					<template
 						v-for="(img, idx) in car.photos.photo"
-						:key="img"	
+						:key="img"
 					>
 						<car-item-thumbnail
 							v-if="idx <= 4"
@@ -106,13 +106,13 @@ export default {
 				v-for="info in carInfo"
 				:key="info.label"
 			>
-				<car-descr-item 
+				<car-descr-item
 					v-if="car[info.key]"
 					:info="info"
 					:value="
-						info.key === 'trade_in' 
-						? Number(car.trade_in) 
-						: info.key === 'credit' 
+						info.key === 'trade_in'
+						? Number(car.trade_in)
+						: info.key === 'credit'
 						? Number(car.credit.replace(/[^0-9]/g,''))
 						: info.key === 'mileage'
 						? car.mileage+'&nbsp;км.'
@@ -136,17 +136,17 @@ export default {
 			<s class="old-price" v-if="car.price">{{ useLocaleString(Number(car.price)) }}</s>
 		</div>
 		<div class="flex flex-wrap gap-y-3 absolute left-0 bottom-0 w-full">
-			<a 
-				href="#common-modal" 
-				class="popup-link btn max-sm:flex-grow sm:w-1/2 !px-0 max-sm:!px-3 max-sm:!py-2 text-center text-sm 2xl:text-base" 
-				data-title="Хочу скидку" 
+			<a
+				href="#common-modal"
+				class="popup-link btn max-sm:flex-grow sm:w-1/2 !px-0 max-sm:!px-3 max-sm:!py-2 text-center text-sm 2xl:text-base"
+				data-title="Хочу скидку"
 				:data-form_name="`Хочу скидку. ${car.model} VIN(${car.vin})`">
 				Хочу скидку
 			</a>
-			<a 
-				href="#common-modal" 
-				class="popup-link btn black max-sm:flex-grow sm:w-1/2 !px-0 max-sm:!px-3 max-sm:!py-2 text-center text-sm 2xl:text-base" 
-				:data-title="`Расчитать кредит <span class='uppercase whitespace-nowrap'>${car.brand} ${car.model}</span>`" 
+			<a
+				href="#common-modal"
+				class="popup-link btn black max-sm:flex-grow sm:w-1/2 !px-0 max-sm:!px-3 max-sm:!py-2 text-center text-sm 2xl:text-base"
+				:data-title="`Расчитать кредит <span class='uppercase whitespace-nowrap'>${car.brand} ${car.model}</span>`"
 				:data-form_name="`Расчитать кредит. ${car.model} VIN(${car.vin})`">
 				Расчитать кредит
 			</a>
