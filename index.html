@@ -18,7 +18,7 @@
 			data-n-head="ssr"
 			rel="icon"
 			type="image/x-icon"
-			href="./img/favicon.ico"
+			href="/img/favicon.ico"
 		/>
 
 		<link href="/src/scss/app.scss" rel="stylesheet" />
@@ -79,18 +79,19 @@
 				<div
 					class="flex max-[450px]:flex-col items-center flex-wrap gap-3 sm:gap-0 max-[450px]:justify-center justify-between py-2 md:py-4"
 				>
-					<div
+					<a
+						href="/"
 						class="flex items-center flex-nowrap justify-center max-[450px]:flex-row flex-col sm:flex-row gap-2 lg:gap-4"
 					>
 						<div class="max-[450px]:pr-4 max-[450px]:border-r sm:pr-4 sm:border-r border-r-[#628788]">
-							<img src="img/logo.png" class="max-h-6 lg:max-h-8" alt="Baic" />
+							<img src="/img/logo.png" class="max-h-6 lg:max-h-8" alt="Baic" />
 						</div>
 						<div
 							class="max-[450px]:text-2xl text-md sm:text-2xl lg:text-4xl leading-none uppercase tracking-wider lg:tracking-normal"
 						>
 							Альфа
 						</div>
-					</div>
+					</a>
 					<div class="top_addr hidden xl:block">
 						г. Самара, ул. Ново-Урицкая, д.&nbsp;22
 					</div>
@@ -98,6 +99,9 @@
 						>+7 (846) 9 777-779</a
 					>
 
+					<a href="/cars/" class="btn black flex-shrink-0 !px-3 md:!px-8 lg:!px-14 !py-2 md:!py-3 text-xs md:text-base"
+						>Авто в наличии</a
+					>
 					<a
 						class="popup-link btn flex-shrink-0 !px-3 md:!px-8 lg:!px-14 !py-2 md:!py-3 text-xs md:text-base"
 						href="#common-modal"
@@ -150,7 +154,7 @@
 								</div>
 							</div>
 							<img
-								src="img/banners/gift-banner-1920.jpg"
+								src="/img/banners/gift-banner-1920.jpg"
 								class="absolute inset-0 h-full object-cover object-center"
 								alt="ALT"
 								loading="lazy"
@@ -165,19 +169,17 @@
 									<p data-swiper-parallax="-40%" class="text-xs sm:text-xl md:text-2xl mt-3 sm:mt-5 mb-4 sm:mb-10">Уже доступны для бронирования в&nbsp;дилерском центре Альфа в&nbsp;Самаре!</p>
 									<div data-swiper-parallax="-55%">
 										<a
-											class="popup-link btn white btn-o text-xs sm:text-base !py-1 sm:!py-3"
-											href="#common-modal"
-											data-title="Узнать подробнее"
-											data-form_name="Узнать подробнее. Новые автомобили по цене заводов изготовителей. Баннер"
+											class="btn white btn-o text-xs sm:text-base !py-1 sm:!py-3"
+											href="/cars/"
 										>
-											Узнать подробнее
+											Выбрать автомобиль
 										</a>
 									</div>
 								</div>
 							</div>
 							<video
 								muted
-								poster="img/banner.jpg"
+								poster="/img/banner.jpg"
 								class="absolute inset-0 h-full object-cover"
 							>
 								<source src="video/banner.mp4" type="video/mp4" />
@@ -205,14 +207,14 @@
 
 		<section class="relative pb-20 xl:pb-32 z-[1] model" data-dir="dashing">
 			<img
-				src="img/dashing/bg.jpg"
+				src="/img/dashing/bg.jpg"
 				class="absolute w-full h-[420px] object-cover z-[-1]"
 			/>
 			<div
 				class="hidden md:block absolute right-0 md:top-72 lg:top-48 xl:top-32 2xl:top-24 sm:max-w-[50%] md:max-w-[550px] lg:max-w-3xl xl:max-w-5xl 2xl:max-w-6xl"
 			>
 				<img
-					src="img/dashing/white.png"
+					src="/img/dashing/white.png"
 					class="w-full h-auto color-img-preview"
 					alt="JETOUR DASHING"
 				/>
@@ -265,8 +267,8 @@
 						</p>
 					</div>
 					<a
-						class="popup-link text-white/90 mt-10 lg:mt-0 flex items-center gap-1.5 group"
-						href="#common-modal"
+						class="text-white/90 mt-10 lg:mt-0 flex items-center gap-1.5 group"
+						href="/cars/?model=dashing"
 						data-title="Подобрать комплектацию"
 						data-form_name="Подобрать комплектацию. Jetour Dashing"
 					>
@@ -309,7 +311,7 @@
 
 				<div class="block md:hidden mb-10 mt-10">
 					<img
-						src="img/dashing/white.png"
+						src="/img/dashing/white.png"
 						class="w-full h-auto color-img-preview"
 						alt="Baic U5 Plus"
 					/>
@@ -381,7 +383,13 @@
 
 				<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-14">
 					<a
-						class="popup-link btn black btn-o"
+						class="btn black !px-0"
+						href="/cars/?model=dashing"
+					>
+						Авто в наличии
+					</a>
+					<a
+						class="popup-link btn !px-0"
 						href="#common-modal"
 						data-title="Узнать цену"
 						data-form_name="Узнать цену. Jetour Dashing"
@@ -389,7 +397,7 @@
 						Узнать цену
 					</a>
 					<a
-						class="popup-link btn !px-0"
+						class="popup-link btn black btn-o"
 						href="#common-modal"
 						data-title="Рассчитать кредит"
 						data-form_name="Рассчитать кредит. Jetour Dashing"
@@ -397,20 +405,12 @@
 						Рассчитать кредит
 					</a>
 					<a
-						class="popup-link btn black !px-0"
+						class="popup-link btn gray !px-0"
 						href="#common-modal"
 						data-title="Записаться на тест-драйв"
 						data-form_name="Запись на тест-драйв. Jetour Dashing"
 					>
 						Записаться на тест-драйв
-					</a>
-					<a
-						class="popup-link btn gray !px-0"
-						href="#common-modal"
-						data-title="Узнать цену по акции"
-						data-form_name="Узнать цену по акции. Jetour Dashing"
-					>
-						Узнать цену по акции
 					</a>
 				</div>
 			</div>
@@ -420,14 +420,14 @@
 
 		<section class="relative pb-20 z-[1] model bg-gray-100" data-dir="x90Plus">
 			<img
-				src="img/x90Plus/bg.jpg"
+				src="/img/x90Plus/bg.jpg"
 				class="absolute w-full h-[420px] object-cover z-[-1]"
 			/>
 			<div
 				class="hidden md:block absolute right-0 md:top-52 lg:top-32 xl:top-16 2xl:top-0 sm:max-w-[50%] md:max-w-[550px] lg:max-w-3xl xl:max-w-5xl 2xl:max-w-6xl"
 			>
 				<img
-					src="img/x90Plus/white.png"
+					src="/img/x90Plus/white.png"
 					class="w-full h-auto color-img-preview"
 					alt="Jetour x90Plus"
 				/>
@@ -482,8 +482,8 @@
 						</p>
 					</div>
 					<a
-						class="popup-link text-white mt-10 lg:mt-0 flex items-center gap-1.5 group relative z-10"
-						href="#common-modal"
+						class="text-white mt-10 lg:mt-0 flex items-center gap-1.5 group relative z-10"
+						href="/cars/?model=x90plus"
 						data-title="Подобрать комплектацию"
 						data-form_name="Подобрать комплектацию. Jetour x90Plus"
 					>
@@ -526,7 +526,7 @@
 
 				<div class="block md:hidden mb-10">
 					<img
-						src="img/x90Plus/white.png"
+						src="/img/x90Plus/white.png"
 						class="w-full h-auto color-img-preview"
 						alt="Jetour x90Plus"
 					/>
@@ -600,7 +600,13 @@
 
 				<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-14">
 					<a
-						class="popup-link btn black btn-o"
+						class="btn black !px-0"
+						href="/cars/?model=x90plus"
+					>
+						Авто в наличии
+					</a>
+					<a
+						class="popup-link btn !px-0"
 						href="#common-modal"
 						data-title="Узнать цену"
 						data-form_name="Узнать цену. Jetour x90Plus"
@@ -608,7 +614,7 @@
 						Узнать цену
 					</a>
 					<a
-						class="popup-link btn !px-0"
+						class="popup-link btn black btn-o"
 						href="#common-modal"
 						data-title="Рассчитать кредит"
 						data-form_name="Рассчитать кредит. Jetour x90Plus"
@@ -616,20 +622,12 @@
 						Рассчитать кредит
 					</a>
 					<a
-						class="popup-link btn black !px-0"
-						href="#common-modal"
-						data-title="Записаться на тест-драйв"
-						data-form_name="Запись на тест-драйв. Jetour x90Plus"
-					>
-						Записаться на тест-драйв
-					</a>
-					<a
 						class="popup-link btn gray !px-0"
 						href="#common-modal"
-						data-title="Узнать цену по акции"
-						data-form_name="Узнать цену по акции. Jetour x90Plus"
+						data-title="Записаться на тест-драйв"
+						data-form_name="Запись на тест-драйв. Jetour Dashing"
 					>
-						Узнать цену по акции
+						Записаться на тест-драйв
 					</a>
 				</div>
 			</div>
@@ -704,17 +702,23 @@
 				<div
 					class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-5"
 				>
-					<div
+					<a href="/cars/" title="Новые автомобили"
 						class="rounded-lg bg-gray-100 p-1 sm:p-3 flex items-center flex-nowrap gap-1 sm:gap-2 shadow-lg"
 					>
-						<span class="mdi mdi-car-settings text-xl sm:text-2xl md:text-4xl"></span>
-						<span class="block text-xs sm:text-lg 2xl:text-xl">Сервис</span>
-					</div>
+						<span class="mdi mdi-car-key text-xl sm:text-2xl md:text-4xl"></span>
+						<span class="block text-xs sm:text-lg 2xl:text-xl">Новые автомобили</span>
+					</a>
 					<div
 						class="rounded-lg bg-gray-100 p-1 sm:p-3 flex items-center flex-nowrap gap-1 sm:gap-2 shadow-lg"
 					>
 						<span class="mdi mdi-car text-xl sm:text-2xl md:text-4xl"></span>
 						<span class="block text-xs sm:text-lg 2xl:text-xl">Тест-драйв</span>
+					</div>
+					<div
+						class="rounded-lg bg-gray-100 p-1 sm:p-3 flex items-center flex-nowrap gap-1 sm:gap-2 shadow-lg"
+					>
+						<span class="mdi mdi-car-settings text-xl sm:text-2xl md:text-4xl"></span>
+						<span class="block text-xs sm:text-lg 2xl:text-xl">Сервис</span>
 					</div>
 					<div
 						class="rounded-lg bg-gray-100 p-1 sm:p-3 flex items-center flex-nowrap gap-1 sm:gap-2 shadow-lg"
@@ -737,26 +741,14 @@
 					<div
 						class="rounded-lg bg-gray-100 p-1 sm:p-3 flex items-center flex-nowrap gap-1 sm:gap-2 shadow-lg"
 					>
-						<span
-							class="mdi mdi-shield-check-outline text-xl sm:text-2xl md:text-4xl"
-						></span>
-						<span class="block text-xs sm:text-lg 2xl:text-xl"
-							>Гарантийный ремонт</span
-						>
-					</div>
-					<div
-						class="rounded-lg bg-gray-100 p-1 sm:p-3 flex items-center flex-nowrap gap-1 sm:gap-2 shadow-lg"
-					>
-						<span class="mdi mdi-car-key text-xl sm:text-2xl md:text-4xl"></span>
-						<span class="block text-xs sm:text-lg 2xl:text-xl">Новые автомобили</span>
+						<span class="mdi mdi-shield-check-outline text-xl sm:text-2xl md:text-4xl"></span>
+						<span class="block text-xs sm:text-lg 2xl:text-xl">Гарантийный ремонт</span>
 					</div>
 					<div
 						class="rounded-lg bg-gray-100 p-1 sm:p-3 flex items-center flex-nowrap gap-1 sm:gap-2 shadow-lg"
 					>
 						<span class="mdi mdi-car-3-plus text-xl sm:text-2xl md:text-4xl"></span>
-						<span class="block text-xs sm:text-lg 2xl:text-xl"
-							>Автомобили с пробегом</span
-						>
+						<span class="block text-xs sm:text-lg 2xl:text-xl">Автомобили с пробегом</span>
 					</div>
 					<div
 						class="rounded-lg bg-gray-100 p-1 sm:p-3 flex items-center flex-nowrap gap-1 sm:gap-2 shadow-lg"
@@ -768,24 +760,18 @@
 						class="rounded-lg bg-gray-100 p-1 sm:p-3 flex items-center flex-nowrap gap-1 sm:gap-2 shadow-lg"
 					>
 						<span class="mdi mdi-car-battery text-xl sm:text-2xl md:text-4xl"></span>
-						<span class="block text-xs sm:text-lg 2xl:text-xl"
-							>Продажа запасный частей</span
-						>
+						<span class="block text-xs sm:text-lg 2xl:text-xl">Продажа запасный частей</span>
 					</div>
 					<div
 						class="rounded-lg bg-gray-100 p-1 sm:p-3 flex items-center flex-nowrap gap-1 sm:gap-2 shadow-lg"
 					>
 						<span class="mdi mdi-cash-100 text-xl sm:text-2xl md:text-4xl"></span>
-						<span class="block text-xs sm:text-lg 2xl:text-xl"
-							>Выкуп автомобилей</span
-						>
+						<span class="block text-xs sm:text-lg 2xl:text-xl">Выкуп автомобилей</span>
 					</div>
 					<div
 						class="rounded-lg bg-gray-100 p-1 sm:p-3 flex items-center flex-nowrap gap-1 sm:gap-2 shadow-lg"
 					>
-						<span
-							class="mdi mdi-credit-card-check text-xl sm:text-2xl md:text-4xl"
-						></span>
+						<span class="mdi mdi-credit-card-check text-xl sm:text-2xl md:text-4xl"></span>
 						<span class="block text-xs sm:text-lg 2xl:text-xl">Кредитование</span>
 					</div>
 					<div
@@ -810,7 +796,7 @@
 						class="flex items-center flex-nowrap flex-col sm:flex-row gap-1 sm:gap-4 mb-6"
 					>
 						<div class="sm:pr-4 sm:border-r border-r-[#628788]">
-							<img src="img/logo.png" class="max-h-10" alt="Baic" />
+							<img src="/img/logo.png" class="max-h-10" alt="Baic" />
 						</div>
 						<div
 							class="text-xl sm:text-2xl leading-none uppercase tracking-wider sm:tracking-normal"
@@ -1087,21 +1073,6 @@
 
 		<script type="module" src="/src/js/app.js"></script>
 
-		<script>
-			// if ("loading" in HTMLImageElement.prototype) {
-			// 	const images = document.querySelectorAll('img[loading="lazy"]');
-			// 	images.forEach((img) => {
-			// 		img.src = img.dataset.src;
-			// 	});
-			// } else {
-			// 	// Dynamically import the LazySizes library
-			// 	const script = document.createElement("script");
-			// 	script.src =
-			// 		"https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js";
-			// 	document.body.appendChild(script);
-			// }
-		</script>
-		<!-- calltouch -->
 		<script>
 		(function(w,d,n,c){w.CalltouchDataObject=n;w[n]=function(){w[n]["callbacks"].push(arguments)};if(!w[n]["callbacks"]){w[n]["callbacks"]=[]}w[n]["loaded"]=false;if(typeof c!=="object"){c=[c]}w[n]["counters"]=c;for(var i=0;i<c.length;i+=1){p(c[i])}function p(cId){var a=d.getElementsByTagName("script")[0],s=d.createElement("script"),i=function(){a.parentNode.insertBefore(s,a)},m=typeof Array.prototype.find === 'function',n=m?"init-min.js":"init.js";s.async=true;s.src="https://mod.calltouch.ru/"+n+"?id="+cId;if(w.opera=="[object Opera]"){d.addEventListener("DOMContentLoaded",i,false)}else{i()}}})(window,document,"ct","hn3joaz3");
 		</script>
