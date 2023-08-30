@@ -3,7 +3,7 @@ import path from "path";
 import vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
-  base: '',
+  base: '/',
   build: {
     outDir: path.resolve(__dirname, 'docs'),
     rollupOptions: {
