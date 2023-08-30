@@ -144,8 +144,13 @@ $$("form").forEach((form) => {
 		for (const pair of formData) {
 			params.append(pair[0], pair[1]);
 		}
-		console.log(formData.form);
-		return;
+
+		let formDataObj = {"EventProperties":{}};
+		formData.forEach((value, key) => (formDataObj["EventProperties"][key] = value));
+		formDataObj['EventCategory'] = 'Lead';
+		formDataObj["EventProperties"]['formID'] = form.id;
+		formDataObj['sourceName'] = 'page';
+
 		// await fetch('https://alexsab.ru/lead/test/', {
 		await fetch("https://alexsab.ru/lead/jetour/alpha/", {
 			method: "POST",
@@ -167,11 +172,7 @@ $$("form").forEach((form) => {
 				} else if (data.answer == "error") {
 					showMessageModal(messageModal, errorIcon, errorText + "<br>" + data.error);
 				} else {
-					dl("form_success", {
-						// formName: formData.get('form'),
-						formName: form.id,
-						sourceName: 'page'
-					})
+					dl("form_success", formDataObj)
 					showMessageModal(messageModal, successIcon, successText);
 				}
 				form.reset();
