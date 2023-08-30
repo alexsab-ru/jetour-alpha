@@ -2,7 +2,7 @@ export function useTranslit(word) {
     if (!word) {
       return false;
     }
-  
+
     const translations = {
       // engineType
       hybrid: "Гибрид",
@@ -39,7 +39,7 @@ export function useTranslit(word) {
       red: "Красный",
       grey: "Серый",
       azure: "Лазурный",
-      // 
+      //
       bodytype: "Кузов",
       engine: "Объем двигателя",
       gear_rus: "Трансмиссия",
@@ -53,9 +53,8 @@ export function useTranslit(word) {
       price_up: "По возрастанию цены",
       default: "По умолчанию",
     };
-  
+
     let rusVal = translations[word] || word;
-  
+
     return typeof word === "object" ? word.name : rusVal;
   }
-  
