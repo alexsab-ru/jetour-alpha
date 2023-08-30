@@ -1,4 +1,5 @@
 <script>
+import { computed } from 'vue'
 	export default {
 		props: {
 			car: Object,
@@ -13,7 +14,7 @@
 				type: Boolean,
 				default: true
 			}
-		}
+		},
 	}
 </script>
 

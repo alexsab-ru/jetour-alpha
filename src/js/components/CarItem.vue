@@ -4,8 +4,6 @@ import { useTranslit } from "../use/translit";
 import CarItemThumbnail from './CarItemThumbnail.vue';
 import CarDescrItem from './CarDescrItem.vue';
 
-import { nextTick } from "vue";
-
 export default {
 	components: { CarItemThumbnail, CarDescrItem },
 	props: {
