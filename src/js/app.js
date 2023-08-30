@@ -3,7 +3,9 @@ import './modules/functions';
 import './modules/color.links';
 import './modules/map';
 import './modules/form';
-import './modules/modals';
+import { modal, closeModal } from'./modules/modals';
+modal();
+closeModal();
 
 import { createApp } from 'vue';
 // import router from './router';

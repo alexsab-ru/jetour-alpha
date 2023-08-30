@@ -6,6 +6,8 @@ import GLightbox from "glightbox";
 import "glightbox/dist/css/glightbox.min.css";
 const lightbox = GLightbox({});
 
+import { modal, closeModal } from'../modules/modals';
+
 export default {
     components: {
         CarItem 
@@ -23,7 +25,9 @@ export default {
         onMounted(() => {    
             setTimeout(() => {
                 lightbox.reload();
-            }, 1000)        
+                modal();
+                closeModal();
+            }, 1000) 
         })
 
         return {

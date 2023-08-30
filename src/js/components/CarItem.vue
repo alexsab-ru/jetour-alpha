@@ -95,8 +95,8 @@ export default {
 			<h2 class="!mb-6">{{ car.model }}</h2>
 		</a>
 
-		<div class="top_number d-flex" v-if="car.price && car.priceWithDiscount">
-			<div class="top_number-color val-benefit">
+		<div class="top_number left-0" v-if="car.price && car.priceWithDiscount">
+			<div class="bg-accent px-2 py-1 ml-[1px]">
 				Выгода&nbsp;{{ useLocaleString(Number(car.price - car.priceWithDiscount)) }}
 			</div>
 		</div>
@@ -176,19 +176,21 @@ export default {
 			</div>
 			<s class="old-price" v-if="car.price">{{ useLocaleString(Number(car.price)) }}</s>
 		</div>
-		<div class="btn-wrap">
-			<a
-				href="#cheaper"
-				class="btn btn-white popup-link"
-				@click.prevent="modalShow('#cheaper')"
-				><div>Хочу&nbsp;скидку</div></a
-			>
-			<a
-				href="#credit"
-				class="btn popup-link credit-link"
-				@click.prevent="modalShow('#credit')"
-				><div>Расчитать&nbsp;кредит</div></a
-			>
+		<div class="flex flex-wrap gap-y-3 absolute left-0 bottom-0 w-full">
+			<a 
+				href="#common-modal" 
+				class="popup-link btn max-sm:flex-grow sm:w-1/2 !px-0 max-sm:!px-3 max-sm:!py-2 text-center text-sm 2xl:text-base" 
+				data-title="Хочу скидку" 
+				:data-form_name="`Хочу скидку. ${car.model} VIN(${car.vin})`">
+				Хочу скидку
+			</a>
+			<a 
+				href="#common-modal" 
+				class="popup-link btn black max-sm:flex-grow sm:w-1/2 !px-0 max-sm:!px-3 max-sm:!py-2 text-center text-sm 2xl:text-base" 
+				:data-title="`Расчитать кредит <span class='uppercase whitespace-nowrap'>${car.brand} ${car.model}</span>`" 
+				:data-form_name="`Расчитать кредит. ${car.model} VIN(${car.vin})`">
+				Расчитать кредит
+			</a>
 		</div>
 	</div>
 </template>
