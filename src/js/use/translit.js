@@ -47,6 +47,11 @@ export function useTranslit(word) {
       fuel: "Тип топлива",
       year: "Год выпуска",
       color_rus: "Цвет кузова",
+      // 
+      asc: "По моделям",
+      price_down: "По убыванию цены",
+      price_up: "По возрастанию цены",
+      default: "По умолчанию",
     };
 
     let rusVal = translations[word] || word;
