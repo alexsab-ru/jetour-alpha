@@ -1,9 +1,9 @@
 {
-  "name": "start-parcel-project-with-tailwindcss",
+  "name": "jetour-alpha",
   "version": "1.0.0",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host --open",
     "build": "vite build --emptyOutDir",
     "preview": "vite preview"
   },
