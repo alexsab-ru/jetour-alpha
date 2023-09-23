@@ -5,6 +5,7 @@ import './modules/color.links';
 import './modules/map';
 import './modules/form';
 import { modal, closeModal } from'./modules/modals';
+import './modules/btn.up';
 modal();
 closeModal();
 
