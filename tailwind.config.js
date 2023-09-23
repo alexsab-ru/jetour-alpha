@@ -12,7 +12,7 @@ export const theme = {
   },
   colors: {
     blue: '#1b3252',
-    red: colors.red,
+    red: '#ff874a',
     accent: '#ff874a',
     transparent: 'transparent',
     white: colors.white,
