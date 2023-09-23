@@ -97,14 +97,14 @@ window.WebsiteAnalytics = (function() {
 	goals.forEach(function(value, index, array){
 		if(value.goal != null) {
 			document.querySelectorAll(value.selector).forEach(function(element) {
-				console.log("Set \"" + value.goal + "\" goal");
+				// console.log("Set \"" + value.goal + "\" goal");
 				element.addEventListener(value.action, function(){
 					ymGoal(value.goal);
 				});
 			});
 		} else if(value.hit != null) {
 			document.querySelectorAll(value.selector).forEach(function(element) {
-				console.log("Set \"" + value.goal + "\" hit");
+				// console.log("Set \"" + value.goal + "\" hit");
 				element.addEventListener(value.action, function(){
 					ymPage(value.goal);
 					dataLayer.push({
