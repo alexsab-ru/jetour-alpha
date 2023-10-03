@@ -8,7 +8,7 @@ export function modal(){
 				const targetModal = document.getElementById(id.replace("#", ""));
 				if (!targetModal) return;
 				targetModal.classList.remove("hidden");
-	
+
 				const captionEl = targetModal.querySelector(".caption");
 				if (captionEl) {
 					captionEl.innerHTML = link.dataset.title;
@@ -21,14 +21,14 @@ export function modal(){
 				document.body.classList.add("overflow-hidden");
 			})
 	);
-	
+
 	document.querySelectorAll(".modal-overlay").forEach((el) => {
 		document.addEventListener("keydown", (event) => {
 			if (event.key == "Escape") {
 				closeModal(el);
 			}
 		});
-	
+
 		el.addEventListener("click", (event) => {
 			if (typeof event.target.dataset.close != "undefined") {
 				closeModal(el);
@@ -37,7 +37,8 @@ export function modal(){
 	});
 }
 
-export function closeModal(modal) {	
+export function closeModal(modal) {
+	window.WebsiteAnalytics.dataLayer("form-error");
 	document.querySelectorAll(".error-message").forEach((mes) => {
 		mes.classList.add("hidden");
 	});
