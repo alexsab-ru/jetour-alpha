@@ -42,6 +42,31 @@
 		}
 	}
 }
+[data-dir="x70plus"] {
+	.color-link {
+		&[data-color="c1b"] {
+			@apply bg-contain bg-[url(/img/models/x70plus/color-change/c1bkm.png)];
+		}
+		&[data-color="c2b"] {
+			@apply bg-contain bg-[url(/img/models/x70plus/color-change/c2bkm.png)];
+		}
+		&[data-color="c3b"] {
+			@apply bg-contain bg-[url(/img/models/x70plus/color-change/c3bkm.png)];
+		}
+		&[data-color="c4b"] {
+			@apply bg-contain bg-[url(/img/models/x70plus/color-change/c4bkm.png)];
+		}
+		&[data-color="c5b"] {
+			@apply bg-contain bg-[url(/img/models/x70plus/color-change/c5bkm.png)];
+		}		
+		&[data-color="c6b"] {
+			@apply bg-contain bg-[url(/img/models/x70plus/color-change/c6bkm.png)];
+		}		
+		&[data-color="c7b"] {
+			@apply bg-contain bg-[url(/img/models/x70plus/color-change/c7bkm.png)];
+		}
+	}
+}
 .color-link {
 	@apply relative block w-6 sm:w-8 lg:w-10 h-6 sm:h-8 lg:h-10 rounded-full shadow-sm shadow-[#eee];
 	&.active::after {
