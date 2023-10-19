@@ -49,7 +49,7 @@ export default {
 			:id="car.vin+'-car'"
 			data-title="Хочу скидку"
 			:data-form_name="`Хочу скидку. ${car.model} VIN(${car.vin})`">
-			<h2 class="!mb-6">{{ car.model }}</h2>
+			<h2 class="!mb-6 uppercase">{{ car.model }}</h2>
 		</a>
 
 		<div class="top_number left-0" v-if="car.price && car.priceWithDiscount">

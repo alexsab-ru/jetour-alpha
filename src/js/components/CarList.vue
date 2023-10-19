@@ -97,7 +97,7 @@
 <template>
 	<Loader v-if="loading" />
 	<div class="container">
-		<h2 class="text-xl sm:text-4xl font-medium mb-3">Автомобили в наличии</h2>
+		<h1 class="text-xl sm:text-4xl font-medium mb-3">Автомобили Jetour в&nbsp;наличии в&nbsp;Самаре</h1>
 
 		<p class="mb-4">{{ count }}</p>
 		<hr />
