@@ -38,7 +38,8 @@ export function modal(){
 }
 
 export function closeModal(modal) {
-	window.WebsiteAnalytics.dataLayer("form-error");
+	window.WebsiteAnalytics.dataLayer("form-close");
+
 	document.querySelectorAll(".error-message").forEach((mes) => {
 		mes.classList.add("hidden");
 	});
