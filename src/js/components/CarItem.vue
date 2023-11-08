@@ -144,9 +144,9 @@ export default {
 			<a
 				href="#common-modal"
 				class="popup-link btn black max-sm:flex-grow sm:w-1/2 !px-0 max-sm:!px-3 max-sm:!py-2 text-center text-sm 2xl:text-base"
-				:data-title="`Расчитать кредит <span class='uppercase whitespace-nowrap'>${car.brand} ${car.model}</span>`"
-				:data-form_name="`Расчитать кредит. ${car.model} VIN(${car.vin})`">
-				Расчитать кредит
+				:data-title="`Рассчитать кредит <span class='uppercase whitespace-nowrap'>${car.brand} ${car.model}</span>`"
+				:data-form_name="`Рассчитать кредит. ${car.model} VIN(${car.vin})`">
+				Рассчитать кредит
 			</a>
 		</div>
 	</div>
