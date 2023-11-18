@@ -104,11 +104,11 @@
 
 		<div class="flex items-center gap-4 my-5">
 
-			<span>Сортировать по:</span>
+			<span class="text-xs sm:text-base flex-shrink-0">Сортировать по:</span>
 
-			<div class="relative min-w-[250px] w-auto">
+			<div class="relative flex-grow sm:flex-grow-0 min-[450px]:min-w-[250px] sm:max-w-[250px] w-auto">
 				<span
-					class="border py-2 px-4 cursor-pointer flex items-center justify-between gap-5 flex-nowrap"
+					class="text-xs sm:text-base border py-1 sm:py-2 px-2 sm:px-4 cursor-pointer flex items-center justify-between gap-5 flex-nowrap"
 					@click="open = !open"
 				>
 					{{ useTranslit(sort) }}
@@ -118,7 +118,7 @@
 					></span>
 				</span>
 				<div
-					class="absolute top-full left-0 min-w-fit w-full border bg-white shadow-xl z-10 max-h-[165px] overflow-y-auto transition-all duration-300 custom-scroll"
+					class="absolute top-full sm:left-0 right-0 sm:right-auto min-w-fit w-full border bg-white shadow-xl z-10 max-h-[165px] overflow-y-auto transition-all duration-300 custom-scroll"
 					:class="{
 						'invisible opacity-0 -translate-y-2': !open,
 						'visible opacity-100 translate-y-0': open,
@@ -126,7 +126,7 @@
 				>
 					<a
 						href="#"
-						class="block py-2 px-4 whitespace-nowrap transition-colors duration-300 hover:bg-gray-200"
+						class="text-xs sm:text-base block py-2 px-4 whitespace-nowrap transition-colors duration-300 hover:bg-gray-200"
 						:class="{ 'bg-gray-200': sort === item }"
 						v-for="item in ['asc', 'price_down', 'price_up', 'default']"
 						:key="item"
