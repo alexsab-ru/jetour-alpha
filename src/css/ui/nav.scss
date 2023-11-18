@@ -1,0 +1,25 @@
+.site-nav{
+    @apply sticky md:fixed max-w-sm lg:max-w-full w-full h-screen lg:h-auto right-0 lg:right-auto lg:border-t border-t-black/10 max-lg:bg-white z-50 max-lg:overflow-y-auto transition-all duration-300 max-lg:translate-x-full;
+    &.active{
+        @apply translate-x-0;
+    }
+    .container{
+        @apply max-lg:p-0;
+    }
+    ul{
+        @apply lg:flex items-center mt-10 lg:mt-0 max-lg:border-b;
+    }
+    a{
+        @apply block lg:inline-block py-3 px-6 transition-colors duration-300 hover:bg-black hover:text-white font-light;
+        &.active{
+            @apply bg-black text-white;
+        }
+    }
+}
+
+.overlay{
+    @apply fixed inset-0 bg-black/70 z-40 transition-opacity duration-500 opacity-0 invisible lg:hidden;
+    &.active{
+        @apply opacity-100 visible;
+    }
+}

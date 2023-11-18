@@ -10,6 +10,20 @@ if(hashURL){
 	window.location.hash = hashURL;	
 }
 
+let prevScrollpos = window.scrollY;
+let $header = document.querySelector("header");
+let $nav = document.getElementById('site_nav');
+let hideHeaderPos = $header.offsetHeight;
+let hideNavPos = $nav ? $nav.offsetHeight : 0;
+let ww = window.innerWidth;
+
+$nav ? $nav.style.top = hideHeaderPos + "px" : null;
+
+window.addEventListener("resize", () => {
+	hideHeaderPos = $header.clientHeight;
+	ww = window.innerWidth;
+});
+
 document.querySelectorAll('a[href^="#"]:not(.popup-link)').forEach((link) => {
 	link.addEventListener("click", function (e) {
 		e.preventDefault();
@@ -21,7 +35,7 @@ document.querySelectorAll('a[href^="#"]:not(.popup-link)').forEach((link) => {
 function scroll(hash){
 	const scrollTarget = document.getElementById(hash);
 	if(scrollTarget){
-		const topOffset = document.querySelector("header").offsetHeight;
+		const topOffset = $nav && ww >= 1024 ? hideNavPos : 0;
 		// const topOffset = 0; // если не нужен отступ сверху
 		const elementPosition = scrollTarget.getBoundingClientRect().top;
 		const offsetPosition = elementPosition - topOffset;
@@ -31,3 +45,76 @@ function scroll(hash){
 		});
 	}
 }
+
+window.addEventListener("scroll", () => {
+	var currentScrollPos = window.scrollY;
+	if (currentScrollPos > hideHeaderPos) {
+		if (prevScrollpos > currentScrollPos) {
+			$header.style.top = 0;
+			$nav.classList.remove('bg-white/90')
+			$nav.classList.add('bg-white', 'shadow-2xl')
+			$header.classList.remove('bg-white/90')
+			$header.classList.add('bg-white')
+			$nav ? $nav.style.top = hideHeaderPos + "px" : null;
+		} else {
+			$header.style.top = -hideHeaderPos + "px";
+			$nav.classList.remove('bg-white/90')
+			$nav.classList.add('bg-white', 'shadow-2xl')
+            $nav ? $nav.style.top = 0 : null;
+		}
+		prevScrollpos = currentScrollPos;
+	} else {
+		$header.style.top = 0;
+		$nav.classList.add('bg-white/90')
+		$nav.classList.remove('bg-white', 'shadow-2xl')
+		$header.classList.add('bg-white/90')
+		$header.classList.remove('bg-white')
+        $nav ? $nav.style.top = hideHeaderPos + "px" : null;
+	}
+	
+	let distance = ww >= 1024 ? $nav.offsetHeight * 2.5 : 0;
+	let scrollDistance = window.scrollY;
+	document.querySelectorAll('.section').forEach((el, i) => {
+		if (el.offsetTop - distance <= scrollDistance) {
+			document.querySelectorAll('.scroll-link').forEach((elem) => {
+				if (elem.classList.contains('active')) {
+					elem.classList.remove('active');
+				}
+			});
+
+			document.querySelectorAll('.scroll-link')[i].classList.add('active');
+		}
+		if(scrollDistance < 700){
+			document.querySelectorAll('.scroll-link').forEach((elem) => {
+				elem.classList.remove('active');
+			});
+		}
+	});
+	closeMenu()
+});
+
+function closeMenu(){
+	$nav.classList.remove('active')
+	overlay.classList.remove('active')
+}
+
+const overlay = document.querySelector('.overlay');
+document.querySelector('.mobile-menu-btn').addEventListener('click', e => {
+	$nav.classList.add('active')
+	overlay.classList.add('active')
+})
+
+overlay.addEventListener('click', e => {
+	closeMenu()
+})
+
+document.querySelector('.close-mobile-menu').addEventListener('click', e => {
+	closeMenu()
+})
+
+document.addEventListener('keydown', e => {
+	if(e.key === 'Escape'){
+		closeMenu()
+	}
+})
+
