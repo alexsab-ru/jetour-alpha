@@ -1,5 +1,5 @@
 .site-nav{
-    @apply sticky md:fixed max-w-sm lg:max-w-full w-full h-screen lg:h-auto right-0 lg:right-auto lg:border-t border-t-black/10 max-lg:bg-white z-50 max-lg:overflow-y-auto transition-all duration-300 max-lg:translate-x-full;
+    @apply fixed max-w-sm lg:max-w-full w-full h-screen lg:h-auto right-0 lg:right-auto lg:border-t border-t-black/10 max-lg:bg-white z-50 max-lg:overflow-y-auto transition-all duration-300 max-lg:translate-x-full;
     &.active{
         @apply translate-x-0;
     }
