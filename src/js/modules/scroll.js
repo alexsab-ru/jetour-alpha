@@ -1,3 +1,5 @@
+import { closeMenu, $nav } from "./mobile.menu";
+
 const hashURL = window.location.hash.substring(1);
 window.location.hash = '';
 
@@ -12,7 +14,6 @@ if(hashURL){
 
 let prevScrollpos = window.scrollY;
 let $header = document.querySelector("header");
-let $nav = document.getElementById('site_nav');
 let hideHeaderPos = $header.offsetHeight;
 let hideNavPos = $nav ? $nav.offsetHeight : 0;
 let ww = window.innerWidth;
@@ -50,25 +51,25 @@ window.addEventListener("scroll", () => {
 	var currentScrollPos = window.scrollY;
 	if (currentScrollPos > hideHeaderPos) {
 		if (prevScrollpos > currentScrollPos) {
-			$header.style.top = 0;
 			$nav.classList.remove('bg-white/90')
 			$nav.classList.add('bg-white', 'shadow-2xl')
 			$header.classList.remove('bg-white/90')
 			$header.classList.add('bg-white')
+			$header.style.top = 0;
 			$nav ? $nav.style.top = hideHeaderPos + "px" : null;
 		} else {
-			$header.style.top = -hideHeaderPos + "px";
 			$nav.classList.remove('bg-white/90')
 			$nav.classList.add('bg-white', 'shadow-2xl')
+			$header.style.top = -hideHeaderPos + "px";
             $nav ? $nav.style.top = 0 : null;
 		}
 		prevScrollpos = currentScrollPos;
 	} else {
-		$header.style.top = 0;
 		$nav.classList.add('bg-white/90')
 		$nav.classList.remove('bg-white', 'shadow-2xl')
 		$header.classList.add('bg-white/90')
 		$header.classList.remove('bg-white')
+		$header.style.top = 0;
         $nav ? $nav.style.top = hideHeaderPos + "px" : null;
 	}
 	
@@ -92,29 +93,3 @@ window.addEventListener("scroll", () => {
 	});
 	closeMenu()
 });
-
-function closeMenu(){
-	$nav.classList.remove('active')
-	overlay.classList.remove('active')
-}
-
-const overlay = document.querySelector('.overlay');
-document.querySelector('.mobile-menu-btn').addEventListener('click', e => {
-	$nav.classList.add('active')
-	overlay.classList.add('active')
-})
-
-overlay.addEventListener('click', e => {
-	closeMenu()
-})
-
-document.querySelector('.close-mobile-menu').addEventListener('click', e => {
-	closeMenu()
-})
-
-document.addEventListener('keydown', e => {
-	if(e.key === 'Escape'){
-		closeMenu()
-	}
-})
-
