@@ -7,7 +7,7 @@
         @apply max-lg:p-0;
     }
     ul{
-        @apply lg:flex items-center mt-10 lg:mt-0 max-lg:border-b;
+        @apply lg:flex items-center mt-10 pb-4 lg:pb-0 lg:mt-0 max-lg:border-b;
     }
     a{
         @apply block lg:inline-block py-3 px-6 transition-colors duration-300 hover:bg-black hover:text-white font-light;
