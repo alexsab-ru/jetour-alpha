@@ -79,6 +79,14 @@ const showMessageModal = (messageModal, icon, message) => {
 };
 
 
+import { validator } from "./validator";
+
+const rules = {
+	phone: 'required:Телефон является обязательным полем|regex:/^\\+7 [0-9]{3} [0-9]{3}-[0-9]{2}-[0-9]{2}$/:Введен некорректный номер телефона',
+	name: 'required',
+	agree: 'checked',
+}
+
 // FORMS
 // Отправка всех форм
 $$("form").forEach((form) => {
@@ -97,6 +105,11 @@ $$("form").forEach((form) => {
 			'<b class="text-bold block text-2xl mb-4">Упс!</b> Что-то пошло не так. Перезагрузите страницу и попробуйте снова. ';
 		let successText = '<b class="text-bold block text-2xl mb-4">Спасибо!</b> В скором времени мы свяжемся с Вами!';
 		const messageModal = document.getElementById("message-modal");
+
+		// console.log(validator(rules, form));
+		if(Object.keys(validator(rules, form)).length){
+			return false;
+		}
 
 		if (!phone.value.length) {
 			showErrorMes(form, ".phone", "Телефон является обязательным полем");
