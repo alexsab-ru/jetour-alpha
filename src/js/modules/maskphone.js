@@ -16,17 +16,6 @@ export function maskphone(e) {
 	if (11 <= i) num.splice(15, num.length - 15);
 	// num[2] = 9;
 	this.value = num.join("");
-	if (num.length == 1 && num[0] == "") {
-		errorMes.innerText = "Поле обязательно для заполнения";
-		errorMes.classList.remove("hidden");
-		return;
-	}
-	if (num.length != 15 || noValidPhone(this.value)) {
-		errorMes.innerText = "Некорректный номер телефона";
-		errorMes.classList.remove("hidden");
-		return;
-	}
-	errorMes.classList.add("hidden");
 }
 
 export default { noValidPhone, maskphone }
