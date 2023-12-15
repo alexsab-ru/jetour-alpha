@@ -40,7 +40,19 @@ jobs:
     - name: Check for changes
       id: check_changes
       run: |
-        git diff --exit-code || echo "changes=true" >> $GITHUB_ENV
+        if git diff --exit-code; then
+          echo 'check_changes true — git diff'
+          echo "changes=true" >> $GITHUB_ENV
+          echo "changes=true" >> $GITHUB_OUTPUT
+        elif git status -s; then
+          echo 'check_changes true — git status'
+          echo "changes=true" >> $GITHUB_ENV
+          echo "changes=true" >> $GITHUB_OUTPUT
+        else
+          echo 'check_changes else'
+          echo "false — changes=false" >> $GITHUB_ENV
+          echo "changes=false" >> $GITHUB_OUTPUT
+        fi
       continue-on-error: true
 
     - name: Commit changes
